@@ -47,3 +47,35 @@ which saludo
 
 #Run Saludo without PATH
 saludo
+
+
+#======== Exercise 5: Precedence ========
+
+#Create alternative directory
+mkdir -p ~/bin_demo_alt
+
+#Create alternative saludo
+cat> ~/bin_demo_alt/saludo <<'EOF'
+#!/bin/bash
+
+echo "This is the ALTERNATIVE saludo"
+echo "Execute from: $0"
+EOF
+
+#Make executable
+chmod +x ~/bin_demo_alt/saludo
+
+#Check current saludo
+which saludo
+
+#Add bin_demo_alt first in PATH
+export PATH="$HOME/bin_demo_alt: $PATH"
+
+#Verify precedence
+which saludo
+
+#Run saludo
+saludo
+
+#Show all saludo versions
+which -a saludo

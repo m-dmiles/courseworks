@@ -79,3 +79,28 @@ saludo
 
 #Show all saludo versions
 which -a saludo
+
+
+#======== Exercise 6: Symbolic links ========
+
+#Go to home folder
+cd ~
+
+#Create a symbolic link named bin_demo_link point to bin_demo
+ln -s ~/bin_demo ~/bin_demo_link
+
+#Verify the link exists
+ls -l
+
+#Add the link folder to PATH (temporary for this season)
+export PATH=$HOME/bin_demo_link:$PATH
+
+#Show PATH to confirm
+echo $PATH
+
+#Check which saludo is used now
+which saludo
+
+#Run the saludo script
+saludo
+ 

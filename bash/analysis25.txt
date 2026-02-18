@@ -1,0 +1,4 @@
+Log Analysis Results:
+Total accesses: 200
+Failed attempts: 100
+Successful attempts: 0
